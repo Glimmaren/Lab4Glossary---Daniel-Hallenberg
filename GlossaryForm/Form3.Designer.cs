@@ -58,8 +58,9 @@ namespace GlossaryForm
             this.btn_remove.Name = "btn_remove";
             this.btn_remove.Size = new System.Drawing.Size(173, 45);
             this.btn_remove.TabIndex = 3;
-            this.btn_remove.Text = "button2";
+            this.btn_remove.Text = "Remove Word";
             this.btn_remove.UseVisualStyleBackColor = true;
+            this.btn_remove.Click += new System.EventHandler(this.btn_remove_Click);
             // 
             // label1
             // 

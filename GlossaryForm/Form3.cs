@@ -96,5 +96,11 @@ namespace GlossaryForm
             AddWordForm addWord = new AddWordForm();
             addWord.Show();
         }
+
+        private void btn_remove_Click(object sender, EventArgs e)
+        {
+            RemoveWord remove = new RemoveWord();
+            remove.Show();
+        }
     }
 }

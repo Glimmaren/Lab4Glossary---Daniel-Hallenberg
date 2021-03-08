@@ -104,6 +104,7 @@ namespace GlossaryForm
             this.btn_Practice.TabIndex = 5;
             this.btn_Practice.Text = "Practice";
             this.btn_Practice.UseVisualStyleBackColor = false;
+            this.btn_Practice.Click += new System.EventHandler(this.btn_Practice_Click);
             // 
             // Form1
             // 

@@ -45,5 +45,11 @@ namespace GlossaryForm
 
             manageForm.Show();
         }
+
+        private void btn_Practice_Click(object sender, EventArgs e)
+        {
+            PracticeForm practice = new PracticeForm();
+            practice.Show();
+        }
     }
 }
