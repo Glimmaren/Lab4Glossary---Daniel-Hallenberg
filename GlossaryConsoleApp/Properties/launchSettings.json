@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "GlossaryConsoleApp": {
+      "commandName": "Project",
+      "commandLineArgs": "-add test"
+    }
+  }
+}
