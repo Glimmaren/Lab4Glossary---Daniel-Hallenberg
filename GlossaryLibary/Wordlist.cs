@@ -56,12 +56,19 @@ namespace GlossaryLibary
             string[] language = lines[0].Split(';');
             language = language.Where(x => !string.IsNullOrEmpty(x)).ToArray();
 
-            for (int i = 0; i < language.Length; i++)
+            if (language.Length > 1)
             {
-                if (!language[i].All(char.IsLetter))
+                for (int i = 0; i < language.Length; i++)
                 {
-                    throw new Exception($"{language[i]} is not a valid language, check file");
+                    if (!language[i].All(char.IsLetter))
+                    {
+                        throw new Exception($"{language[i]} is not a valid language, check file");
+                    }
                 }
+            }
+            else
+            {
+                throw new Exception($"Number of langues är to low, check file!");
             }
 
             var wordList = new Wordlist(name, language.ToArray());

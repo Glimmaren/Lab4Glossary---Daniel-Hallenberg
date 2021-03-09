@@ -38,9 +38,7 @@ namespace GlossaryConsoleApp
             else
             {
                 GlossaryConsole.PrintErrorInstructionMessage();
-            }
-
-            
+            }          
         }
         public void Add(string[] args)
         {
@@ -105,7 +103,6 @@ namespace GlossaryConsoleApp
             {
                 PrintErrorInstructionMessage();
             }
-
         }
         public void Remove(string[] args)
         {

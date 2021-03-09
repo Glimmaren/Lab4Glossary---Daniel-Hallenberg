@@ -19,7 +19,7 @@ namespace GlossaryForm
         {
             InitializeComponent();
 
-            cmbBox_Language.DataSource = ManageForm.wordlist.Languages;
+            cmbBox_Language.DataSource = FormCore.wordlist.Languages;
             //strLanguage = cmbBox_Language.SelectedIndex;
             language = cmbBox_Language.SelectedIndex;
 
@@ -31,8 +31,8 @@ namespace GlossaryForm
             strLanguage = cmbBox_Language.Text;
             word = cmbBox_word.Text;
             
-            ManageForm.wordlist.Remove(language, word);
-            ManageForm.wordlist.Save();
+            FormCore.wordlist.Remove(language, word);
+            FormCore.wordlist.Save();
 
             cmbBox_word.Refresh();
 
@@ -40,7 +40,7 @@ namespace GlossaryForm
 
         private void cmbBox_Language_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string[] words = new string[ManageForm.wordlist.Count()];
+            string[] words = new string[FormCore.wordlist.Count()];
             int count = 0;
             //language = Array.IndexOf(ManageForm.wordlist.Languages, strLanguage);
             language = cmbBox_Language.SelectedIndex;
@@ -51,7 +51,7 @@ namespace GlossaryForm
                 count++;
             };
           
-            ManageForm.wordlist.List(language, showtrans);
+            FormCore.wordlist.List(language, showtrans);
 
             cmbBox_word.DataSource = words.ToList();
         }

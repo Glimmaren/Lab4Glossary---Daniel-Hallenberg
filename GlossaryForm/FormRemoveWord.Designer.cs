@@ -39,12 +39,17 @@ namespace GlossaryForm
             // 
             // btn_add
             // 
-            this.btn_add.Location = new System.Drawing.Point(135, 263);
+            this.btn_add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btn_add.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btn_add.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_add.Image = global::GlossaryForm.Properties.Resources.exit;
+            this.btn_add.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_add.Location = new System.Drawing.Point(112, 263);
             this.btn_add.Name = "btn_add";
-            this.btn_add.Size = new System.Drawing.Size(131, 42);
+            this.btn_add.Size = new System.Drawing.Size(154, 49);
             this.btn_add.TabIndex = 23;
-            this.btn_add.Text = "Remove Word";
-            this.btn_add.UseVisualStyleBackColor = true;
+            this.btn_add.Text = "Remove";
+            this.btn_add.UseVisualStyleBackColor = false;
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // lbl_Language2
@@ -74,7 +79,7 @@ namespace GlossaryForm
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.label1.Location = new System.Drawing.Point(114, 25);
+            this.label1.Location = new System.Drawing.Point(112, 35);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(197, 40);
             this.label1.TabIndex = 12;
@@ -103,6 +108,7 @@ namespace GlossaryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(408, 363);
             this.Controls.Add(this.cmbBox_word);
             this.Controls.Add(this.cmbBox_Language);
@@ -111,7 +117,7 @@ namespace GlossaryForm
             this.Controls.Add(this.lbl_Language);
             this.Controls.Add(this.label1);
             this.Name = "RemoveWord";
-            this.Text = "Form5";
+            this.Text = "Remove Word";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -1,7 +1,7 @@
 ﻿
 namespace GlossaryForm
 {
-    partial class AddWordForm
+    partial class FormAddWord
     {
         /// <summary>
         /// Required designer variable.
@@ -41,6 +41,7 @@ namespace GlossaryForm
             this.txtBox_Language4 = new System.Windows.Forms.TextBox();
             this.txtBox_Language5 = new System.Windows.Forms.TextBox();
             this.btn_add = new System.Windows.Forms.Button();
+            this.txtBox_addToFile = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -48,11 +49,11 @@ namespace GlossaryForm
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.label1.Location = new System.Drawing.Point(190, 20);
+            this.label1.Location = new System.Drawing.Point(62, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(148, 40);
+            this.label1.Size = new System.Drawing.Size(197, 40);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Add Word";
+            this.label1.Text = "Add Word to: ";
             // 
             // lbl_Language1
             // 
@@ -154,19 +155,39 @@ namespace GlossaryForm
             // 
             // btn_add
             // 
-            this.btn_add.Location = new System.Drawing.Point(283, 362);
+            this.btn_add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btn_add.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btn_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_add.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_add.Image = global::GlossaryForm.Properties.Resources.save;
+            this.btn_add.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_add.Location = new System.Drawing.Point(290, 355);
             this.btn_add.Name = "btn_add";
-            this.btn_add.Size = new System.Drawing.Size(131, 42);
+            this.btn_add.Size = new System.Drawing.Size(164, 49);
             this.btn_add.TabIndex = 11;
-            this.btn_add.Text = "Add Word";
-            this.btn_add.UseVisualStyleBackColor = true;
+            this.btn_add.Text = "SAVE";
+            this.btn_add.UseVisualStyleBackColor = false;
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
-            // AddWordForm
+            // txtBox_addToFile
+            // 
+            this.txtBox_addToFile.BackColor = System.Drawing.Color.White;
+            this.txtBox_addToFile.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBox_addToFile.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtBox_addToFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.txtBox_addToFile.Location = new System.Drawing.Point(255, 22);
+            this.txtBox_addToFile.Name = "txtBox_addToFile";
+            this.txtBox_addToFile.ReadOnly = true;
+            this.txtBox_addToFile.Size = new System.Drawing.Size(189, 39);
+            this.txtBox_addToFile.TabIndex = 12;
+            // 
+            // FormAddWord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(512, 460);
+            this.Controls.Add(this.txtBox_addToFile);
             this.Controls.Add(this.btn_add);
             this.Controls.Add(this.txtBox_Language5);
             this.Controls.Add(this.txtBox_Language4);
@@ -179,8 +200,8 @@ namespace GlossaryForm
             this.Controls.Add(this.lbl_Language2);
             this.Controls.Add(this.lbl_Language1);
             this.Controls.Add(this.label1);
-            this.Name = "AddWordForm";
-            this.Text = "Form4";
+            this.Name = "FormAddWord";
+            this.Text = "Add Word";
             this.Load += new System.EventHandler(this.AddWordForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -201,5 +222,6 @@ namespace GlossaryForm
         private System.Windows.Forms.TextBox txtBox_Language4;
         private System.Windows.Forms.TextBox txtBox_Language5;
         private System.Windows.Forms.Button btn_add;
+        private System.Windows.Forms.TextBox txtBox_addToFile;
     }
 }

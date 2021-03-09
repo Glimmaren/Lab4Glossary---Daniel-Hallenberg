@@ -25,6 +25,7 @@ namespace GlossaryLibary
             return $"{Translations[0]}";
         }
 
+        //La till denna, som kollar om ordet redan finns i klassen Word
         public bool WordExist(Word word)
         {
 

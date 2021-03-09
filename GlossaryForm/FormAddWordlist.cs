@@ -11,12 +11,13 @@ using System.Windows.Forms;
 
 namespace GlossaryForm
 {
-    public partial class Form2 : Form
+    public partial class FormAddWordlist : Form
     {
-
-        public Form2()
+        public event EventHandler AddNewListButtonClicked;
+        public FormAddWordlist()
         {
             InitializeComponent();
+            
         }
 
         private void btn_OkAddNewList_Click(object sender, EventArgs e) // Här finns
@@ -46,7 +47,7 @@ namespace GlossaryForm
                             tbx.Text = "";
                             tbx.Enabled = false;
                         }
-                        txtBox_NameOfList.Enabled = true; //TODO FIXA SÅ ATT INTE FÖRSTA TBX BLIR UNENABLAD!
+                        txtBox_NameOfList.Enabled = true;
                         return;
                     }
                 }
@@ -59,7 +60,11 @@ namespace GlossaryForm
 
                 wordlist.Save();
 
-                
+                if(this.AddNewListButtonClicked != null)
+                {
+                    this.AddNewListButtonClicked(this, EventArgs.Empty); // kolla på detta
+                }
+                       
 
                 foreach (TextBox tb in this.Controls.OfType<TextBox>())
                 {
@@ -79,6 +84,9 @@ namespace GlossaryForm
                 }
                 txtBox_NameOfList.Enabled = true;
             }
+
+
+
         }
 
         private void lbl_Language1_Click(object sender, EventArgs e)
@@ -113,5 +121,6 @@ namespace GlossaryForm
                     txtBox_Language5.Enabled = true; break;
             }
         }
+      
     }
 }

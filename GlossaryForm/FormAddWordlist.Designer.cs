@@ -1,7 +1,7 @@
 ﻿
 namespace GlossaryForm
 {
-    partial class Form2
+    partial class FormAddWordlist
     {
         /// <summary>
         /// Required designer variable.
@@ -52,7 +52,7 @@ namespace GlossaryForm
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.label1.Location = new System.Drawing.Point(176, 24);
+            this.label1.Location = new System.Drawing.Point(196, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(220, 45);
             this.label1.TabIndex = 0;
@@ -108,13 +108,19 @@ namespace GlossaryForm
             // 
             // btn_OkAddNewList
             // 
+            this.btn_OkAddNewList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btn_OkAddNewList.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btn_OkAddNewList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_OkAddNewList.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_OkAddNewList.Image = global::GlossaryForm.Properties.Resources.save;
+            this.btn_OkAddNewList.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_OkAddNewList.Location = new System.Drawing.Point(380, 414);
             this.btn_OkAddNewList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_OkAddNewList.Name = "btn_OkAddNewList";
-            this.btn_OkAddNewList.Size = new System.Drawing.Size(184, 53);
+            this.btn_OkAddNewList.Size = new System.Drawing.Size(183, 53);
             this.btn_OkAddNewList.TabIndex = 5;
-            this.btn_OkAddNewList.Text = "Save New List";
-            this.btn_OkAddNewList.UseVisualStyleBackColor = true;
+            this.btn_OkAddNewList.Text = "Save";
+            this.btn_OkAddNewList.UseVisualStyleBackColor = false;
             this.btn_OkAddNewList.Click += new System.EventHandler(this.btn_OkAddNewList_Click);
             // 
             // txtBox_Language1
@@ -223,7 +229,7 @@ namespace GlossaryForm
             this.lbl_Language5.TabIndex = 16;
             this.lbl_Language5.Text = "Language5:";
             // 
-            // Form2
+            // FormAddWordlist
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -246,8 +252,8 @@ namespace GlossaryForm
             this.Controls.Add(this.cmBox_NumOfLanguages);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "Form2";
-            this.Text = "OK";
+            this.Name = "FormAddWordlist";
+            this.Text = "Add Wordlist";
             this.ResumeLayout(false);
             this.PerformLayout();
 

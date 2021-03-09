@@ -11,16 +11,21 @@ using System.Windows.Forms;
 
 namespace GlossaryForm
 {
-    public partial class ManageForm : Form
+    public partial class FormCore : Form
     {
 
         public static Wordlist wordlist;
+        public FormAddWordlist formAddWordlist;
+        public FormAddWord formAddWord;
+        private int ListIndex { get; set; }
+
         public static string[] PopulateList()
         {
             string[] list = Wordlist.GetLists();
-
+            
             return list;
         }
+
 
         public static string[] GetWordlist(int sortBy, string listName)
         {
@@ -48,23 +53,26 @@ namespace GlossaryForm
             return words;        
         }
 
-        public static void RefreshList()
+        public void RefreshList()
         {
             
-        }
-
-        public ManageForm()
-        {
-            InitializeComponent();
-
             lstbox_Wordlists.DataSource = PopulateList();
+            lstbox_Wordlists.SelectedIndex = this.ListIndex;
         }
 
+        public FormCore()
+        {
+            ListIndex = 0;
+            InitializeComponent();
+            RefreshList();
+        }
+       
         private void lstbox_Wordlists_SelectedIndexChanged(object sender, EventArgs e)
         {
             string[] words = GetWordlist(0, lstbox_Wordlists.Text);
             string[] sortByLanguage = words[0].Split('\t', StringSplitOptions.RemoveEmptyEntries);
             int numberOfWords = words.Length - 1;
+            
 
             chkbox_SortBy.Items.Clear();
             lstbox_Words.DataSource = words;
@@ -93,8 +101,10 @@ namespace GlossaryForm
 
         private void btn_Add_Click(object sender, EventArgs e)
         {
-            AddWordForm addWord = new AddWordForm();
-            addWord.Show();
+            formAddWord = new FormAddWord();
+            formAddWord.AddNewWordButtonClicked += AddNewWordButtonClicked;
+            formAddWord.Show();
+            this.ListIndex = lstbox_Wordlists.SelectedIndex;
         }
 
         private void btn_remove_Click(object sender, EventArgs e)
@@ -102,5 +112,29 @@ namespace GlossaryForm
             RemoveWord remove = new RemoveWord();
             remove.Show();
         }
+
+        private void btn_AddWordlist_Click(object sender, EventArgs e)
+        {
+            formAddWordlist = new FormAddWordlist();
+            formAddWordlist.AddNewListButtonClicked += AddNewListButtonClicked;
+            formAddWordlist.Show();
+        }
+
+        private void btn_Practice_Click(object sender, EventArgs e)
+        {
+            FormPractice formPractice = new FormPractice();
+            formPractice.Show();
+        }
+
+        private void AddNewListButtonClicked(object sende, EventArgs e)
+        {
+            RefreshList();
+        }
+
+        private void AddNewWordButtonClicked(object sende, EventArgs e)
+        {
+            RefreshList();
+        }
+
     }
 }

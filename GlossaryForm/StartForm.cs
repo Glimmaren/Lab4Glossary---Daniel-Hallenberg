@@ -12,19 +12,19 @@ using System.Windows.Forms;
 namespace GlossaryForm
 {
     
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
+
+
         public static string[] PopulateList()
         {
             string[] list = Wordlist.GetLists();
 
             return list;
         }
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
-
-            lstbox_WordLists.DataSource = PopulateList();
         }
 
         private void lstbox_WordLists_SelectedIndexChanged(object sender, EventArgs e)
@@ -32,24 +32,14 @@ namespace GlossaryForm
 
         }
 
-        private void btn_newList_Click(object sender, EventArgs e)
-        {
-            Form2 form2 = new Form2();
 
-            form2.Show();
+        private void btn_Start_Click(object sender, EventArgs e)
+        {
+            FormCore coreForm = new FormCore();
+
+            coreForm.Show();
         }
 
-        private void btn_ManageLists_Click(object sender, EventArgs e)
-        {
-            ManageForm manageForm = new ManageForm();
 
-            manageForm.Show();
-        }
-
-        private void btn_Practice_Click(object sender, EventArgs e)
-        {
-            PracticeForm practice = new PracticeForm();
-            practice.Show();
-        }
     }
 }
