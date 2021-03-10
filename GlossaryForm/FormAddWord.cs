@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -13,8 +14,7 @@ namespace GlossaryForm
 {
     public partial class FormAddWord : Form
     {
-
-        public event EventHandler AddNewWordButtonClicked;
+        public event EventHandler AddNewWordButtonClicked; //Används för att skicka event till FormCore
         public FormAddWord()
         {
             InitializeComponent();
@@ -24,7 +24,6 @@ namespace GlossaryForm
             lbl_Language5.Hide();
 
             txtBox_addToFile.Text = FormCore.wordlist.Name + ".dat";
-
 
             try
             {
@@ -73,15 +72,7 @@ namespace GlossaryForm
             {
                 MessageBox.Show(e.ToString());
             }
-            
-
-        }
-
-        private void AddWordForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
+        }     
         private void btn_add_Click(object sender, EventArgs e)
         {
             string[] words = new string[FormCore.wordlist.Languages.Length];
@@ -89,7 +80,7 @@ namespace GlossaryForm
 
             foreach (TextBox tb in this.Controls.OfType<TextBox>().Reverse())
             {
-                if (tb.Enabled && tb.Text != "")
+                if (tb.Enabled && tb.Text != "" && Regex.IsMatch(tb.Text, @"^[a-zA-Z]+$"))
                 {
                     words[index] = tb.Text;
                     index++;
@@ -120,7 +111,6 @@ namespace GlossaryForm
             {
                 this.AddNewWordButtonClicked(this, EventArgs.Empty);
             }
-
         }
     }
 }

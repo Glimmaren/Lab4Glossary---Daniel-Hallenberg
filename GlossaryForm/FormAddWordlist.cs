@@ -16,13 +16,10 @@ namespace GlossaryForm
         public event EventHandler AddNewListButtonClicked;
         public FormAddWordlist()
         {
-            InitializeComponent();
-            
+            InitializeComponent();          
         }
-
         private void btn_OkAddNewList_Click(object sender, EventArgs e) // Här finns
-        {
-            
+        {          
             if (txtBox_NameOfList.Text != "" && cmBox_NumOfLanguages.SelectedItem != null) 
             {
                 int numOfLanguages = Convert.ToInt32(cmBox_NumOfLanguages.SelectedItem.ToString()) + 1;
@@ -65,7 +62,6 @@ namespace GlossaryForm
                     this.AddNewListButtonClicked(this, EventArgs.Empty); // kolla på detta
                 }
                        
-
                 foreach (TextBox tb in this.Controls.OfType<TextBox>())
                 {
                     tb.Text = "";
@@ -84,16 +80,11 @@ namespace GlossaryForm
                 }
                 txtBox_NameOfList.Enabled = true;
             }
-
-
-
         }
-
         private void lbl_Language1_Click(object sender, EventArgs e)
         {
 
         }
-
         private void cmBox_NumOfLanguages_SelectedIndexChanged(object sender, EventArgs e)
         {
             switch (cmBox_NumOfLanguages.SelectedItem.ToString())

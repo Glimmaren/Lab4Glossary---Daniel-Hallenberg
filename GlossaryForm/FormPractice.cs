@@ -24,7 +24,6 @@ namespace GlossaryForm
             guessCount = 0;
             SetWord();
         }
-
         private void FormPractice_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.KeyCode == Keys.Return)
@@ -32,15 +31,12 @@ namespace GlossaryForm
                 btn_guess_Click(this, new EventArgs());
             }
         }
-
         private void btn_guess_Click(object sender, EventArgs e)
         {
             answer = txtBox_UserWord.Text.ToLower();
           
-            CheckAnswer(answer);
-            
+            CheckAnswer(answer);       
         }
-
         private void SetWord()
         {
             word = FormCore.wordlist.GetWordToPractice();
@@ -50,8 +46,7 @@ namespace GlossaryForm
                 + word.Translations[word.FromLanguage];
             lbl_ToLanguage.Text = FormCore.wordlist.Languages[word.ToLanguage].ToString() + ": ";
             rightWord = word.Translations[word.ToLanguage];
-        }
-        
+        }     
         private void CheckAnswer(string answer)
         {
             if (answer.Equals(rightWord))

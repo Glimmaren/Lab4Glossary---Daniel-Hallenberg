@@ -1,7 +1,7 @@
 ﻿
 namespace GlossaryForm
 {
-    partial class RemoveWord
+    partial class FormRemoveWord
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace GlossaryForm
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_add = new System.Windows.Forms.Button();
+            this.btn_RemoveWord = new System.Windows.Forms.Button();
             this.lbl_Language2 = new System.Windows.Forms.Label();
             this.lbl_Language = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -37,20 +37,20 @@ namespace GlossaryForm
             this.cmbBox_word = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
-            // btn_add
+            // btn_RemoveWord
             // 
-            this.btn_add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btn_add.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btn_add.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_add.Image = global::GlossaryForm.Properties.Resources.exit;
-            this.btn_add.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_add.Location = new System.Drawing.Point(112, 263);
-            this.btn_add.Name = "btn_add";
-            this.btn_add.Size = new System.Drawing.Size(154, 49);
-            this.btn_add.TabIndex = 23;
-            this.btn_add.Text = "Remove";
-            this.btn_add.UseVisualStyleBackColor = false;
-            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
+            this.btn_RemoveWord.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btn_RemoveWord.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btn_RemoveWord.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_RemoveWord.Image = global::GlossaryForm.Properties.Resources.exit;
+            this.btn_RemoveWord.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_RemoveWord.Location = new System.Drawing.Point(112, 263);
+            this.btn_RemoveWord.Name = "btn_RemoveWord";
+            this.btn_RemoveWord.Size = new System.Drawing.Size(154, 49);
+            this.btn_RemoveWord.TabIndex = 23;
+            this.btn_RemoveWord.Text = "Remove";
+            this.btn_RemoveWord.UseVisualStyleBackColor = false;
+            this.btn_RemoveWord.Click += new System.EventHandler(this.btn_RemoveWord_Click);
             // 
             // lbl_Language2
             // 
@@ -112,7 +112,7 @@ namespace GlossaryForm
             this.ClientSize = new System.Drawing.Size(408, 363);
             this.Controls.Add(this.cmbBox_word);
             this.Controls.Add(this.cmbBox_Language);
-            this.Controls.Add(this.btn_add);
+            this.Controls.Add(this.btn_RemoveWord);
             this.Controls.Add(this.lbl_Language2);
             this.Controls.Add(this.lbl_Language);
             this.Controls.Add(this.label1);
@@ -125,7 +125,7 @@ namespace GlossaryForm
 
         #endregion
 
-        private System.Windows.Forms.Button btn_add;
+        private System.Windows.Forms.Button btn_RemoveWord;
         private System.Windows.Forms.Label lbl_Language2;
         private System.Windows.Forms.Label lbl_Language;
         private System.Windows.Forms.Label label1;

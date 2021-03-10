@@ -202,7 +202,6 @@ namespace GlossaryForm
             this.Controls.Add(this.label1);
             this.Name = "FormAddWord";
             this.Text = "Add Word";
-            this.Load += new System.EventHandler(this.AddWordForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
