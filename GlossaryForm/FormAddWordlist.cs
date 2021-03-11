@@ -18,7 +18,7 @@ namespace GlossaryForm
         {
             InitializeComponent();          
         }
-        private void btn_OkAddNewList_Click(object sender, EventArgs e) // Här finns
+        private void btn_OkAddNewList_Click(object sender, EventArgs e)
         {          
             if (txtBox_NameOfList.Text != "" && cmBox_NumOfLanguages.SelectedItem != null) 
             {
@@ -53,13 +53,22 @@ namespace GlossaryForm
                 name = txtBoxInboxReverse[0];
                 languages = txtBoxInboxReverse.Skip(1).ToArray();
 
-                Wordlist wordlist = new Wordlist(name, languages);
+                var currentLibary = Wordlist.GetLists();
 
-                wordlist.Save();
+                if (!currentLibary.Contains(name))
+                {
+                    Wordlist wordlist = new Wordlist(name, languages);
+
+                    wordlist.Save();
+                }
+                else
+                {
+                    MessageBox.Show("List already exist!!");
+                }
 
                 if(this.AddNewListButtonClicked != null)
                 {
-                    this.AddNewListButtonClicked(this, EventArgs.Empty); // kolla på detta
+                    this.AddNewListButtonClicked(this, EventArgs.Empty);
                 }
                        
                 foreach (TextBox tb in this.Controls.OfType<TextBox>())

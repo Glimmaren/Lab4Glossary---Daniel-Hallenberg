@@ -84,9 +84,22 @@ namespace GlossaryLibary
             wordList.Words = translationWords;
 
             return wordList;
-        } // kolla över denna om det går att refactora
+        }
         public void Save()
         {
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+            try
+            {
+                if (!Directory.Exists(path))
+                {
+                    DirectoryInfo di = Directory.CreateDirectory(path);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"The process failed: {e}");
+            }
+
             string fullPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\" + this.Name + ".dat";
 
             using (StreamWriter writer = new StreamWriter(fullPath))
@@ -105,11 +118,11 @@ namespace GlossaryLibary
                         }
                     } 
                 }
-
             }
         }
         public void Add(params string[] translations)
         {
+            
             if (this.Languages.Length != translations.Length)
             {
                 throw new ArgumentException("translations is out of bounds");
@@ -122,7 +135,6 @@ namespace GlossaryLibary
 
             Word word = new Word(translations);
 
-            // kolla om man skall ha exceptions
             for (int i = 0; i < Words.Count; i++)
             {
                 if (this.Words[i].WordExist(word))
@@ -131,7 +143,6 @@ namespace GlossaryLibary
                     goto here;
                 }
             }
-
             this.Words.Add(word);
         here:;
         } 

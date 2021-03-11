@@ -27,7 +27,7 @@ namespace GlossaryConsoleApp
         }
         public void New(string[] args)
         {
-            if (args.Length == 1)
+            if (args.Length > 3)
             {
                 string listName = args[1];
                 string[] languages = args.Skip(2).ToArray();
@@ -148,7 +148,7 @@ namespace GlossaryConsoleApp
         }
         public void Words(string[] args)
         {
-            if (args.Length == 2)
+            if (args.Length == 3)
             {
                 string listName = args[1];
 
@@ -194,7 +194,7 @@ namespace GlossaryConsoleApp
         } 
         public void Count(string[] args)
         {
-            if (args.Length == 1)
+            if (args.Length == 2)
             {
                 string listName = args[1];
 

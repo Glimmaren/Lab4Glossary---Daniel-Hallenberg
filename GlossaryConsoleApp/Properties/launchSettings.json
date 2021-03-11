@@ -2,7 +2,7 @@
   "profiles": {
     "GlossaryConsoleApp": {
       "commandName": "Project",
-      "commandLineArgs": "-add test"
+      "commandLineArgs": "-new iiiii ööööö lllll"
     }
   }
 }
